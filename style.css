@@ -1,0 +1,215 @@
+
+/* ________________________________________________
+   Styles
+*/
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+body {
+    margin: 25px 25px 100px 25px;
+    background-color: #F7F7F7;
+}
+
+/* ________________________________________________
+   Forms and inputs
+*/
+
+form {
+    display: block;
+    margin-bottom: 50px;
+}
+
+form input[type="text"],
+form input[type="submit"] {
+    height: 30px;
+    padding: 0 10px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+form input[type="submit"] {
+    background-color: rgb(15, 250, 15);
+    border: 1px solid #000000;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    outline:0;
+}
+
+form input[type="submit"]:active {
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+}
+
+form input[type="text"] {
+    width: 200px;
+    border: 0; 
+    outline: 0;
+}
+
+form label {
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: block;
+    color: grey;
+}
+
+/* ________________________________________________
+   To do list
+*/
+
+ul#todolist {
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    margin-right: 40px;
+}
+
+ul#todolist {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    width: 400px;
+    min-height: 500px;
+    margin: 0;
+    padding: 20px 30px 60px 30px;
+}
+
+ul#todolist ul {
+    padding: 0;
+}
+
+ul#todolist li { 
+    margin: 0;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+}
+
+ul#todolist li.is-deleting {
+    display: none;
+}
+
+ul#todolist li span.task-checkbox:hover:after,
+ul#todolist li[data-checked="true"] span.task-checkbox:after {
+    content: "\2713";
+    text-align: center;
+    color: rgb(15, 250, 15);
+    font-size: 30px;
+    line-height: 20px;
+}
+
+ul#todolist li span.task-name {
+    padding: 5px 5px 5px 0;
+}
+
+ul#todolist li span.task-checkbox:after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000000;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    margin-right: 20px
+}
+
+ul#todolist li span.task-name {
+    border-bottom: 1px dashed #000000;
+    flex: 1;
+}
+
+ul#todolist li span.task-delete {
+    border-bottom: 1px dashed #000000;
+}
+
+ul#todolist li span.task-delete:hover {
+    color: red;
+}
+
+ul#todolist li span.task-delete:after {
+    content: "×";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+ul#todolist li:hover span.task-delete:after {
+    content: "×";
+}
+
+/* ________________________________________________
+   Alert list
+*/
+
+ul#alerts {
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    margin-right: 40px;
+}
+
+ul#alerts li.alert {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 200px;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    color: #535353;
+    opacity:0;
+    animation: FadeInFadeoutAnimation 10s 1;
+}
+
+ul#alerts li.alert.success {
+    background-color:#E9F9DF;
+    border-color: #BAD8BA;
+}
+
+ul#alerts li.alert.error {
+    background-color: #FDEEEB;
+    border-color: #EAC2BB;
+}
+
+ul#alerts li.alert.warning {
+    background-color:#EFF8FC;
+    border-color: #BBDAED;
+}
+
+/* ________________________________________________
+   Loading
+*/
+
+span.loading-text {
+    font-size: 15px;
+    color: grey;
+}
+
+img#loader {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+/* ________________________________________________
+   CSS Animation
+*/
+
+
+@keyframes FadeInFadeoutAnimation {
+    0%   { opacity:0; }
+    4%   { opacity:1; }
+    95%  { opacity:1; }
+    100% { opacity:0; }
+  }

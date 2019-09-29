@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+<body>
+    <header>
+        <h1>To do list</h1>
+    </header>
+    <form id="add-new-item">
+        <label for="taskName">Add new to do</label>
+        <input type="text" name="taskName"></input>
+        <input type="submit" name="submit" value="Add item"></input>
+    </form>
+    <ul id="todolist">
+        <img src="assets/spinner.gif" id="loader"/>
+        <h3>Uncompleted items</h3>
+        <ul class="uncompleted">
+            <span class="loading-text">Loading ...</span>
+        </ul>
+        <h3>Completed items</h3>
+        <ul class="completed">
+            <span class="loading-text">Loading ...</span>
+        </ul>
+    </ul>
+    <ul id="alerts"></ul>
+    <template>
+        <li class="todolist-item">
+            <span class="task-checkbox"></span>
+            <span class="task-name"></span>
+            <span class="task-delete"></span>
+        </li>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
